@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- controls - 재생 멈춤 음성 등 조절 가능 -->
+    <!-- autoplay - 화면 로드 시 자동 재생 -->
+    <!-- muted - 음성 소거 -->
+    <!-- loop - 영상 반복 재생 -->
+    <!-- poster - autoplay 없이 썸네일 설정 -->
+    <video
+      src="./media/bootcamp.mp4"
+      width="320px"
+      controls
+      poster="./media/bootcamp.png"
+      muted
+      loop
+    ></video>
+    <br />
+    <video src="./media/bootcamp.mp4" width="320px" controls>
+      <track
+        src="./media/bootcamp.en.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="영어(English)"
+      />
+      <track
+        src="./media/bootcamp.ko.vtt"
+        kind="subtitles"
+        srclang="ko"
+        label="한국어(Korean)"
+      />
+      <!-- 자막파일 -->
+      <!-- kind - 자막종류  -->
+      <!-- srclang - 언어코드 -->
+      <!-- label - ... 클릭시 나오는 text  -->
+    </video>
+  </body>
+</html>
