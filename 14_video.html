@@ -12,6 +12,11 @@
     <!-- muted - 음성 소거 -->
     <!-- loop - 영상 반복 재생 -->
     <!-- poster - autoplay 없이 썸네일 설정 -->
+    <!-- preload : auto, metadata, none -->
+    <!--   auto : 영상을 시청하든 안하든 영상을 미리 다운로드. 
+                  시청할 확률 매우 높고 영상 플레이 했을 떄 바로 보여줘야 하는 중요한 영상 -->
+    <!--   metadata : 영상을 다운로드 x. 영상 상영 시간, 영상 관련 meta정보만 미리 가져옴 -->
+    <!--   none : 영상 다운로드 x, 사용자가 영상을 바로 보지 않을 확률이 매우 높은것. 서버 최소한의 트래픽 -->
     <video
       src="./media/bootcamp.mp4"
       width="320px"
@@ -19,6 +24,8 @@
       poster="./media/bootcamp.png"
       muted
       loop
+      autoplay
+      preload="auto"
     ></video>
     <br />
     <video src="./media/bootcamp.mp4" width="320px" controls>
