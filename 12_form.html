@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- action - 데이터를 전송할 주소 -->
+    <!-- method - 데이터를 전송할 방법 -->
+
+    <!-- get - 전송하는 데이터가 url에 붙어서 감. 전송하는 데이터가 url에 노출이 됨.  -->
+    <!--   보안에 취약 할 수 있음  -->
+    <!--   페이지 주소를 공유해야할 때, 네이버쇼핑 검색, 이커머스 등  -->
+    <!-- url에 데이터를 붙여서 보내니까 전송할 수 있는 데이터의 크기에 제약  -->
+
+    <!-- post - 전송하는 데이터가 url에 붙지 않음. 사용자 눈에 보이지 않음  -->
+    <!--   다만 사용자 눈에는 안 보여서 조금 더 안정  -->
+    <!--   결국 전송하는 데이터를 확인 할 수 있음. 개발자 도구 같은 소프트웨어에서. -->
+    <!--   https으로 암호화 해서 하는것이 좋음 (aws 클라우드, 등) -->
+    <!-- 전송할 수 있는 데아터의 크기에 제약이 없음  -->
+
+    <!-- target - 데이터를 전송 할 창을 어디로 할건가  -->
+    <!-- _self - 자기자신 -->
+    <!-- _blank - 새창  -->
+    <!-- _parent, _top  -->
+
+    <!--novalidate - form 태크 input 입력 값 체크 안함 -->
+    <form action="전송할 주소(서버)" method="get" novalidate>  
+      <div>
+        <label for="">이름</label>
+        <input type="text" name="name" id="name" autocomplete="on" />
+      </div>
+      <div>
+        <label for="tel">연락처</label>
+        <input type="tel" name="tel" id="tel" />
+      </div>
+      <div>
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <button type="submit" >저장</button> <!--formnovalidate="formnovalidate">
+    </form>
+  </body>
+</html>
