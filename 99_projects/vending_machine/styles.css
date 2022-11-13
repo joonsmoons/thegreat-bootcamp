@@ -1,0 +1,14 @@
+.coin-box,
+.drinks {
+  display: flex;
+  margin-top: 1em;
+}
+
+.drink {
+  border: 1px black solid;
+  background-color: yellow;
+}
+
+.drink:hover {
+  background-color: grey;
+}
