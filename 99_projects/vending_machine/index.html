@@ -8,22 +8,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>Vending Machine</h2>
+    <main class="machine">
+      <h2 class="header">Vending Machine</h2>
+      <section class="drink-box container">
+        <div class="drinks"></div>
+      </section>
 
-    <p>Choose coin</p>
-    <div class="coin-box">
-      <button class="coin">100</button>
-      <button class="coin">500</button>
-      <button class="coin">1000</button>
-    </div>
+      <section class="input-box container">
+        <div class="section balance">
+          <div>내 지갑:</div>
+          <div class="customer-balance money"></div>
+        </div>
+        <div class="section">
+          <div class="coins">
+            <button class="coin" value="100">100원 투입</button>
+            <button class="coin" value="500">500원 투입</button>
+            <button class="coin" value="1000">1,000원 투입</button>
+          </div>
+        </div>
 
-    <p>Inserted amount: <span class="vending-balance"></span><span></span></p>
+        <div class="section">
+          <div class="balance">
+            <div>투입금액</div>
+            <div class="display-balance money"></div>
+          </div>
 
-    <p>Choose drink</p>
-    <div class="drinks"></div>
+          <div class="balance">
+            <div>자판기에 저장된 금액</div>
+            <div class="machine-wallet money"></div>
+          </div>
+        </div>
+        <div class="section">
+          <button class="return">잔돈반환</button>
+        </div>
+      </section>
 
-    <p>Output</p>
-    <div class="output"></div>
-    <script src="./main.js"></script>
+      <section class="section output-box container output"></section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
