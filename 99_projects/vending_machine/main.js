@@ -93,7 +93,7 @@ const Model = (
       status: 200,
       messages: [
         `<strong>${money.toLocaleString()}원</strong>이 투입되었습니다.`,
-        `총 투입 금액은 <strong>${displayBalance.toLocaleString()}원</strong>입니다.`,
+        `총투입 금액은 <strong>${displayBalance.toLocaleString()}원</strong>입니다.`,
         `당신의 지갑에는 <strong>${customerBalance.toLocaleString()}원</strong>이 남아 있습니다.`,
       ],
     };
@@ -206,8 +206,8 @@ const View = () => {
         drink.quantity
       })`;
       drinkElement.style.backgroundColor =
-        drink.status === 200 ? "#218838" : "buttonface";
-      drinkElement.style.color = drink.status === 200 ? "white" : "black";
+        drink.status === 200 ? "#BDF7B7" : "buttonface";
+      // drinkElement.style.color = drink.status === 200 ? "white" : "black";
     }
     console.log(drinkList);
   };
@@ -297,4 +297,6 @@ const Controller = (model, view) => {
   view.bindReturnChange(returnChange);
 };
 
-const app = Controller(Model(), View());
+window.onload = () => {
+  const app = Controller(Model(), View());
+};

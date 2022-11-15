@@ -5,18 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vending Machine</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="./main.js" defer></script>
   </head>
   <body>
     <main class="machine">
-      <h2 class="header">Vending Machine</h2>
+      <h2 class="header">음료수 자판기🍹</h2>
+      <a
+        href="https://github.com/joonsmoons/thegreat-bootcamp/tree/dev/99_projects/vending_machine"
+        ><i class="fa fa-github icon"></i
+      ></a>
+      <div></div>
       <section class="drink-box container">
+        <div class="label">음료수</div>
         <div class="drinks"></div>
       </section>
 
       <section class="input-box container">
+        <div class="label">사용자 입력</div>
         <div class="section balance">
-          <div>내 지갑:</div>
+          <div>내 지갑</div>
           <div class="customer-balance money"></div>
         </div>
         <div class="section">
@@ -43,9 +55,11 @@
         </div>
       </section>
 
-      <section class="section output-box container output"></section>
+      <section class="section output-box container">
+        <div class="label">메세지</div>
+        <div class="output">투입 금액을 선택해주세요.</div>
+      </section>
+      <div class="footer">Copyright © 2022 Justin. All Rights Reserved</div>
     </main>
-
-    <script type="module" src="./main.js"></script>
   </body>
 </html>
