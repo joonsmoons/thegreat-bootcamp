@@ -200,16 +200,16 @@ const View = () => {
       } else if (drink.status === 502) {
         extraText = "(재고부족)";
       }
-      drinkElement.innerHTML = `${
-        drink.name
-      } <span style="color:red">${extraText}</span></br>(${drink.price.toLocaleString()}원 / 재고수${
-        drink.quantity
-      })`;
+      drinkElement.innerHTML = [
+        `<p><strong>${drink.name}</strong><span style="color:red">${extraText}</span></p>`,
+        `<p>${drink.price.toLocaleString()}원</p>`,
+        `<p>재고수 ${drink.quantity}개</p>`,
+      ].join("");
+
       drinkElement.style.backgroundColor =
         drink.status === 200 ? "#BDF7B7" : "buttonface";
-      // drinkElement.style.color = drink.status === 200 ? "white" : "black";
     }
-    console.log(drinkList);
+    // console.log(drinkList);
   };
 
   const renderMoney = (balances) => {
@@ -242,7 +242,7 @@ const View = () => {
   const bindPurchaseDrink = (handler) => {
     drinksContainer.addEventListener("click", (e) => {
       e.preventDefault();
-      const id = e.target.id;
+      const id = e.target.parentElement.id;
       if (id !== "") {
         const output = handler(parseInt(id));
         renderOutput(output);
@@ -297,6 +297,11 @@ const Controller = (model, view) => {
   view.bindReturnChange(returnChange);
 };
 
-window.onload = () => {
+// window.onload = () => {
+//   const app = Controller(Model(), View());
+// };
+
+window.addEventListener("load", () => {
+  // run MVC once window is loaded
   const app = Controller(Model(), View());
-};
+});
