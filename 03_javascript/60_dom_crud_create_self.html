@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-4 {
+        flex: 33.3333%;
+        margin-bottom: 10px;
+      }
+
+      .col-8 {
+        flex: 66.6666%;
+        margin-bottom: 10px;
+      }
+
+      input.form-control {
+        border: 1px solid black;
+        width: 100%;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-4">Name</div>
+      <div class="col-8">
+        <input type="text" class="form-control" />
+      </div>
+
+      <div class="col-4">Gender</div>
+      <div class="col-8">
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">남자</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">여자</label>
+      </div>
+      <div class="col-4">Company</div>
+      <div class="col-8">
+        <input type="text" id="company" name="company" class="form-control" />
+      </div>
+      <div class="col-4">Email</div>
+      <div class="col-8">
+        <input type="text" id="email" name="email" class="form-control" />
+      </div>
+      <div class="col-4">Phone</div>
+      <div class="col-8">
+        <input type="tel" id="phone" name="phone" class="form-control" />
+      </div>
+      <div class="col-4">Address</div>
+      <div class="col-8">
+        <input type="tel" id="phone" name="phone" class="form-control" />
+      </div>
+
+      <button onclick="createClass()">생성</button>
+      <button>목록</button>
+    </div>
+  </body>
+</html>
