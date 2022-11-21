@@ -1,8 +1,8 @@
 /**
- * Returns the total sum of all coins inside the coin balance.
+ * 지갑에 있는 모든 코인 및 지폐의 총합을 구함
  *
- * @param {object} wallet The object containing quantity for each coin type.
- * @returns {number} Total sum of all coin types.
+ * @param {object} wallet 지갑 객체
+ * @returns {number} 지갑에 있는 코인 및 지폐의 총합
  */
 function calculateBalance(wallet) {
   let total = 0;
@@ -13,11 +13,15 @@ function calculateBalance(wallet) {
 }
 
 /**
- * Returns the change given existing balance and change amount through greedy algorithm.
+ * 지갑에 있는 잔돈 개수 및 반환해야 하는 잔돈 금액을 파라미터로 받아 잔돈이 충분한지 계산하고 반환
+ * (Greedy Algorithm)
  *
- * @param {Object} wallet
- * @param {Number} changeAmount
- * @returns
+ * @param {Object} wallet 지갑 객체
+ * @param {Number} changeAmount 반환해야 하는 잔돈 금액
+ * @returns {Object}
+ *  {status: 200 (정상) / 501 (오류 - 잔돈없음)
+ *   change: 계산 된 잔돈 금액
+ *   wallet: }
  */
 function calculateChange(wallet, changeAmount) {
   let currentIndex = 0;
