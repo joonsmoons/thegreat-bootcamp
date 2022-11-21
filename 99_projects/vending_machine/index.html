@@ -29,27 +29,34 @@
       <section class="input-box container">
         <div class="label">사용자 입력</div>
         <div class="section balance">
-          <div>내 지갑</div>
-          <div class="customer-balance money"></div>
+          <div class="col-6 text-balance">내 지갑</div>
+          <div class="col-6 customer-balance money"></div>
         </div>
         <div class="section">
           <div class="coins">
-            <button class="coin" value="100">100원 투입</button>
-            <button class="coin" value="500">500원 투입</button>
-            <button class="coin" value="1000">1,000원 투입</button>
+            <div>
+              <div id="coin-100" class="coin-img"></div>
+              <button class="coin" value="100">100원 투입</button>
+            </div>
+            <div>
+              <div id="coin-500" class="coin-img"></div>
+              <button class="coin" value="500">500원 투입</button>
+            </div>
+            <div>
+              <div id="coin-1000" class="coin-img"></div>
+              <button class="coin" value="1000">1,000원 투입</button>
+            </div>
           </div>
         </div>
 
-        <div class="section">
-          <div class="balance">
-            <div>투입금액</div>
-            <div class="display-balance money"></div>
-          </div>
+        <div class="section balance">
+          <div class="text-balance col-6">투입금액</div>
+          <div class="display-balance money col-6"></div>
+        </div>
 
-          <div class="balance">
-            <div>자판기에 저장된 금액</div>
-            <div class="machine-wallet money"></div>
-          </div>
+        <div class="section balance">
+          <div class="text-balance col-6">자판기에 저장된 금액</div>
+          <div class="machine-wallet money col-6"></div>
         </div>
         <div class="section">
           <button class="return">잔돈반환</button>

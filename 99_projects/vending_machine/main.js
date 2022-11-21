@@ -1,3 +1,10 @@
+/*
+ * 비고
+ * 1) UI 및 백엔드 로직 구분을 위해 MVC 패턴을 사용해서 구현했습니다.
+ * 2) 추가로 잔돈 계산 알고리즘을 적용해 지속해서 돈을 투입할 때마다 잔돈 여부가 계산됩니다.
+ * 3) 구매할 수 있는 음료가 없을 때나 고객이 "잔돈 반환" 버튼을 누르지 않는 한 잔돈이 자동으로 반환되지 않습니다.
+ */
+
 import { calculateBalance, calculateChange } from "./calculator.js";
 
 /**
@@ -5,8 +12,8 @@ import { calculateBalance, calculateChange } from "./calculator.js";
  *
  * 데이터 핸들링을 수행하는 Model 클래스
  *
- * @param {Object} machineWalletInput 자판기의 현재 잔돈 현황
- * @param {Number} customerBalanceInput 고객 지갑에 있는 총 금액
+ * @param {Object} machineWalletInput 자판기의 현재 잔돈 현황 (default 천원, 전부 백원이라고 가정)
+ * @param {Number} customerBalanceInput 고객 지갑에 있는 총 금액 (default 만원이라고 가정)
  */
 const Model = (
   machineWalletInput = { 100: 10, 500: 0, 1000: 0 },
@@ -17,12 +24,14 @@ const Model = (
   let displayBalance = 0;
   let customerBalance = customerBalanceInput; // customer has adequate coins
 
-  // status:
-  // 400 not enough money (customer)
-  // 500 not enough money (vending)
-  // 501 no change available
-  // 502 no quantity
-  // 200 OK
+  /**
+   * status 값 설명
+   * 400 not enough money (고객)
+   * 500 not enough money (오류 - 자판기)
+   * 501 no change available (오류 - 잔돈부족)
+   * 502 no quantity (오류 - 재고부족)
+   * 200 OK (오류 - 정상)
+   */
   const drinks = [
     { id: 1, name: "코카콜라", price: 700, quantity: 5, status: 500 },
     { id: 2, name: "오렌지 주스", price: 1200, quantity: 5, status: 500 },
@@ -139,11 +148,15 @@ const Model = (
       console.log(`display balance: ${displayBalance}`);
       console.log(`machine balance: ${getMachineWallet()}`);
       const change = returnChange().change;
+      const changeMessage =
+        change > 0
+          ? `잔돈 <strong>${change.toLocaleString()}원</strong>이 나옵니다.`
+          : "반환 할 잔돈이 없습니다.";
       return {
         status: 200,
         messages: [
           `선택한 음료(<strong>${selectedDrink.name}</strong>)가 나왔습니다.`,
-          `잔돈 <strong>${change.toLocaleString()}원</strong>이 나옵니다.`,
+          changeMessage,
         ],
       };
     }
@@ -201,7 +214,7 @@ const View = () => {
     drinksContainer.replaceChildren();
     console.log(drinkList);
     for (let drink of drinkList) {
-      const drinkElement = document.createElement("button");
+      const drinkElement = document.createElement("div");
       let extraText = "";
       drinksContainer.appendChild(drinkElement);
       drinkElement.className = "drink";
@@ -212,13 +225,17 @@ const View = () => {
         extraText = "(재고부족)";
       }
       drinkElement.innerHTML = [
-        `<p><strong>${drink.name}</strong><span style="color:red">${extraText}</span></p>`,
-        `<p>${drink.price.toLocaleString()}원</p>`,
-        `<p>재고수 ${drink.quantity}개</p>`,
+        `<div id="img-${drink.id}" class="drink-img"></div>`,
+        `<button class="drink-button">
+          <p>${drink.name}</p>
+          <p>${drink.price.toLocaleString()}원</p>
+        </button>`,
+        `<p class="small-font">재고수 [${drink.quantity}개]</p>`,
+        `<p style="color:red" class="small-font">${extraText}</p>`, // error message
       ].join("");
 
-      drinkElement.style.backgroundColor =
-        drink.status === 200 ? "#BDF7B7" : "buttonface";
+      drinkElement.childNodes[1].style.backgroundColor =
+        drink.status === 200 ? "#23DC3D" : "buttonface";
     }
     // console.log(drinkList);
   };
@@ -253,8 +270,9 @@ const View = () => {
   const bindPurchaseDrink = (handler) => {
     drinksContainer.addEventListener("click", (e) => {
       e.preventDefault();
-      const id = e.target.parentElement.id;
-      if (id !== "") {
+      const id =
+        e.target.parentElement.parentElement.id + e.target.parentElement.id;
+      if (id.trim() != "") {
         const output = handler(parseInt(id));
         renderOutput(output);
       }
