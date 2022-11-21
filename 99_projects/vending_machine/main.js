@@ -1,5 +1,13 @@
 import { calculateBalance, calculateChange } from "./calculator.js";
 
+/**
+ * @function Model
+ *
+ * 데이터 핸들링을 수행하는 Model 클래스
+ *
+ * @param {Object} machineWalletInput 자판기의 현재 잔돈 현황
+ * @param {Number} customerBalanceInput 고객 지갑에 있는 총 금액
+ */
 const Model = (
   machineWalletInput = { 100: 10, 500: 0, 1000: 0 },
   customerBalanceInput = 10000
@@ -38,8 +46,6 @@ const Model = (
     displayBalance,
     customerBalance,
   });
-  // const getCustomerBalance = () => customerBalance;
-  // const getDisplayBalance = () => displayBalance;
 
   const checkChange = (changeAmount) => {
     // helper: checks if change is available for changeAmount
@@ -177,6 +183,11 @@ const Model = (
   };
 };
 
+/**
+ * @function View
+ *
+ * 자판기가 보여주는 View를 핸들링하는 클래스
+ */
 const View = () => {
   const drinksContainer = document.querySelector(".drinks");
   const coinsContainer = document.querySelector(".coins");
@@ -267,6 +278,14 @@ const View = () => {
   };
 };
 
+/**
+ * @function Controller
+ *
+ * 모델과 뷰를 링크해주는 클래스
+ *
+ * @param {function} model
+ * @param {function} view
+ */
 const Controller = (model, view) => {
   const renderDrinks = () => {
     view.renderDrinks(model.getDrinks());
@@ -296,10 +315,6 @@ const Controller = (model, view) => {
   view.bindPurchaseDrink(purchaseDrink);
   view.bindReturnChange(returnChange);
 };
-
-// window.onload = () => {
-//   const app = Controller(Model(), View());
-// };
 
 window.addEventListener("load", () => {
   // run MVC once window is loaded

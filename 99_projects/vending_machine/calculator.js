@@ -13,9 +13,10 @@ function calculateBalance(wallet) {
 }
 
 /**
+ * Returns the change given existing balance and change amount through greedy algorithm.
  *
- * @param {} balance
- * @param {*} changeAmount
+ * @param {Object} wallet
+ * @param {Number} changeAmount
  * @returns
  */
 function calculateChange(wallet, changeAmount) {
