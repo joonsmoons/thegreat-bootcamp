@@ -1,7 +1,21 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" },
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
   "customers": [
     {
       "id": "6374ae0b4f60ca21d6125585",
@@ -382,6 +396,30 @@
       "registered": "2019-11-25T01:40:50 -09:00",
       "latitude": -47.553447,
       "longitude": 155.172807
+    },
+    {
+      "name": "Justin Lee",
+      "gender": "male",
+      "company": "ㅇㅇㅇ",
+      "email": "justinleesenior@gmail.com",
+      "phone": "010-2933-9239",
+      "address": "(06021)서울 강남구 도산대로45길 18-10",
+      "zonecode": "06021",
+      "roadAddress": "서울 강남구 도산대로45길 18-10",
+      "address2": "",
+      "id": "IoAAQY7"
+    },
+    {
+      "name": "Justin Lee",
+      "gender": "male",
+      "company": "dddd",
+      "email": "joonsmoons@gmail.com",
+      "phone": "010-0002-0000",
+      "address": "(03054)서울 종로구 팔판길 1-6",
+      "zonecode": "03054",
+      "roadAddress": "서울 종로구 팔판길 1-6",
+      "address2": "",
+      "id": "l2iY-yF"
     }
   ]
 }
