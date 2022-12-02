@@ -135,6 +135,70 @@ const routes = [
       import(
         /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/RenderingShowView.vue'
       )
+  },
+  {
+    path: '/extra/computed',
+    name: 'ComputedView',
+    component: () =>
+      import(
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/ComputedView.vue'
+      )
+  },
+  {
+    path: '/extra/watch',
+    name: 'WatchView',
+    component: () =>
+      import(
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/WatchView.vue'
+      )
+  },
+  {
+    path: '/extra/lifecycle',
+    name: 'LifecycleHookView',
+    component: () =>
+      import(
+        /* webpackChunkName: "extra", webpackPrefetch:true */ '../views/3_extra/LifecycleHookView.vue'
+      )
+  },
+  {
+    path: '/reuse/pagetitle',
+    name: 'PageView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/PageView.vue'
+      )
+  },
+  {
+    path: '/reuse/parent',
+    name: 'ParentView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/ParentView.vue'
+      )
+  },
+  {
+    path: '/reuse/list',
+    name: 'ListView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/ListView.vue'
+      )
+  },
+  {
+    path: '/reuse/list2',
+    name: 'ListView2',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/ListView2.vue'
+      )
+  },
+  {
+    path: '/reuse/slot',
+    name: 'SlotView',
+    component: () =>
+      import(
+        /* webpackChunkName: "reuse", webpackPrefetch:true */ '../views/4_reuse/SlotView.vue'
+      )
   }
 ]
 
