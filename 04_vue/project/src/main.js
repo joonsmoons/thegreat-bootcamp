@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store/index'
 import PageTitle from './components/fragment/PageTitle.vue'
 import mixin from './mixins'
 import i18nPlugin from './plugins/i18n'
@@ -58,3 +58,4 @@ app.directive('korean', {
 })
 
 app.mount('#app')
+window.Kakao.init('d69de5d7ffc0e0d1478e67ac301f1917')

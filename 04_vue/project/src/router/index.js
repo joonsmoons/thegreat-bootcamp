@@ -231,6 +231,70 @@ const routes = [
       import(
         /* webpackChunkName: "advanced", webpackPrefetch:true */ '../views/5_advanced/PluginView.vue'
       )
+  },
+  {
+    path: '/vuex/todo',
+    name: 'TodoView',
+    component: () =>
+      import(
+        /* webpackChunkName: "vuex", webpackPrefetch:true */ '../views/6_vuex/TodoView.vue'
+      )
+  },
+  {
+    path: '/vuex/login',
+    name: 'LoginView',
+    component: () =>
+      import(
+        /* webpackChunkName: "vuex", webpackPrefetch:true */ '../views/6_vuex/LoginView.vue'
+      )
+  },
+  {
+    path: '/composition/setup',
+    name: 'SetupView',
+    component: () =>
+      import(
+        /* webpackChunkName: "composition", webpackPrefetch:true */ '../views/7_composition/SetupView.vue'
+      )
+  },
+  {
+    path: '/composition/ref',
+    name: 'RefView',
+    component: () =>
+      import(
+        /* webpackChunkName: "composition", webpackPrefetch:true */ '../views/7_composition/RefView.vue'
+      )
+  },
+  {
+    path: '/composition/func',
+    name: 'FuncView',
+    component: () =>
+      import(
+        /* webpackChunkName: "composition", webpackPrefetch:true */ '../views/7_composition/FuncView.vue'
+      )
+  },
+  {
+    path: '/login/kakao',
+    name: 'KakaoLoginView',
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/KakaoLoginView.vue'
+      )
+  },
+  {
+    path: '/login/main',
+    name: 'MainView',
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/MainView.vue'
+      )
+  },
+  {
+    path: '/login/naver',
+    name: 'NaverLoginView',
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPrefetch:true */ '../views/8_login/NaverLoginView.vue'
+      )
   }
 ]
 
