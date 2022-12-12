@@ -9,7 +9,12 @@ import en from './i18n/en'
 import ko from './i18n/ko'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHatWizard, faUserTie } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(faHatWizard)
+library.add(faUserTie)
 const i18nStrings = { en, ko }
 console.log(i18nStrings)
 const app = createApp(App)
@@ -17,6 +22,7 @@ app.use(store)
 app.use(router)
 app.mixin(mixin)
 app.component('page-title', PageTitle)
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(i18nPlugin, i18nStrings)
 
 app.directive('focus', {
