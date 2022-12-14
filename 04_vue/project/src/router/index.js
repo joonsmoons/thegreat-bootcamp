@@ -311,6 +311,78 @@ const routes = [
       import(
         /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/FontAwesomeView.vue'
       )
+  },
+  {
+    path: '/module/calendar',
+    name: 'FullCalendarView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/FullCalendarView.vue'
+      )
+  },
+  {
+    path: '/module/sweetalert2',
+    name: 'SweetAlert2View',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/SweetAlert2View.vue'
+      )
+  },
+  {
+    path: '/module/loading',
+    name: 'LoadingOverlayView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/LoadingOverlayView.vue'
+      )
+  },
+  {
+    path: '/module/table',
+    name: 'VueGoodTableView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/VueGoodTableView.vue'
+      )
+  },
+  {
+    path: '/module/apex',
+    name: 'ApexChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "module", webpackPrefetch:true */ '../views/9_module/ApexChartView.vue'
+      )
+  },
+  {
+    path: '/chart/bar',
+    name: 'BarChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/BarChartView.vue'
+      )
+  },
+  {
+    path: '/chart/bar2',
+    name: 'BarChartView2',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/BarChartView2.vue'
+      )
+  },
+  {
+    path: '/chart/line',
+    name: 'LineChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/LineChartView.vue'
+      )
+  },
+  {
+    path: '/chart/donut',
+    name: 'DonutChartView',
+    component: () =>
+      import(
+        /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/DonutChartView.vue'
+      )
   }
 ]
 
