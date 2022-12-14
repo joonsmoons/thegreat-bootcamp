@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <bar-chart
+      height="400px"
+      :series="bar.series"
+      :categories="bar.categories"
+      title="Bar차트 타이틀!"
+      legendPosition="right"
+    ></bar-chart>
+  </div>
+</template>
+<script>
+import BarChart from '@/components/charts/BarChart.vue'
+export default {
+  components: { BarChart },
+  data() {
+    return {
+      bar: {
+        series: [
+          {
+            name: '매출',
+            data: [30, 40, 45, 50, 49, 60, 70, 91]
+          },
+          {
+            name: '매입',
+            data: [30, 35, 45, 23, 49, 53, 32, 51]
+          }
+        ],
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+      }
+    }
+  },
+  setup() {},
+  created() {},
+  mounted() {},
+  unmounted() {},
+  methods: {}
+}
+</script>
