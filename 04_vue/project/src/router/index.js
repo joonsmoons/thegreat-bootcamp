@@ -383,6 +383,39 @@ const routes = [
       import(
         /* webpackChunkName: "chart", webpackPrefetch:true */ '../views/10_chart/DonutChartView.vue'
       )
+  },
+  {
+    path: '/template/p1/single',
+    name: 'SingleViewEditView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p1/SingleViewEditView.vue'
+      )
+  },
+  {
+    path: '/template/p2/multiple',
+    name: 'MultipleEditView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p2/MultipleEditView.vue'
+      )
+  },
+  {
+    path: '/template/p3/list',
+    name: 'ListToDetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/ListToDetailView.vue'
+      )
+  },
+  {
+    path: '/template/p3/:id',
+    name: 'DetailView',
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/DetailView.vue'
+      )
   }
 ]
 
