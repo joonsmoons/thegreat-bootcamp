@@ -409,12 +409,53 @@ const routes = [
       )
   },
   {
-    path: '/template/p3/:id',
+    path: '/template/p3/detail/:id',
     name: 'DetailView',
     props: true,
     component: () =>
       import(
         /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/DetailView.vue'
+      )
+  },
+  {
+    path: '/template/p3/edit/:id',
+    name: 'EditView',
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/EditView.vue'
+      )
+  },
+  {
+    path: '/template/p3/new',
+    name: 'CreateView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p3/CreateView.vue'
+      )
+  },
+  {
+    path: '/template/p4/master',
+    name: 'MasterDetailView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p4/MasterDetailView.vue'
+      )
+  },
+  {
+    path: '/template/p4/master2',
+    name: 'MasterDetailModalView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p4/MasterDetailModalView.vue'
+      )
+  },
+  {
+    path: '/template/p5/shuttle',
+    name: 'ShuttleView',
+    component: () =>
+      import(
+        /* webpackChunkName: "template", webpackPrefetch:true */ '../views/11_template/p5/ShuttleView.vue'
       )
   }
 ]

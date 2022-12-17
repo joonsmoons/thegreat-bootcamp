@@ -14,6 +14,10 @@
       </div>
       <div class="col-auto">
         <button class="btn btn-primary me-1" @click="doSearch">조회</button>
+        <button class="btn btn-success me-1" @click="goToCreate">생성</button>
+        <button class="btn btn-secondary me-1" @click="downloadExcel">
+          다운로드
+        </button>
       </div>
     </div>
     <table class="table table-striped table-bordered mt-3">
@@ -48,7 +52,14 @@ export default {
   data() {
     return {
       searchName: '',
-      customers: []
+      customers: [],
+      headers: [
+        { title: 'Name', key: 'name' },
+        { title: 'Company', key: 'company' },
+        { title: 'Email', key: 'email' },
+        { title: 'Phone', key: 'phone' },
+        { title: 'Address', key: 'address' }
+      ]
     }
   },
   setup() {},
@@ -57,7 +68,6 @@ export default {
   unmounted() {},
   methods: {
     async doSearch() {
-      console.log('Customer Name', this.customerName)
       const loader = this.$loading.show()
       this.customers = await this.$get(
         `/customers?name_like=${this.searchName}`
@@ -65,7 +75,13 @@ export default {
       loader.hide()
     },
     goToDetail(customerId) {
-      this.$router.push(`/template/p3/${customerId}`)
+      this.$router.push(`/template/p3/detail/${customerId}`)
+    },
+    goToCreate() {
+      this.$router.push('/template/p3/new')
+    },
+    downloadExcel() {
+      this.$excelFromTable(this.headers, this.customers, 'customers')
     }
   }
 }
