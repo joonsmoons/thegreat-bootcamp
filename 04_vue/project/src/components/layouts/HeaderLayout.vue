@@ -22,21 +22,52 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" @click="goToMenu('/')">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" @click="goToMenu('/about')">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" @click="goToMenu('/databinding/string')"
-              >String</a
+            <a
+              class="nav-link"
+              :class="{ active: $route.path === '/' }"
+              aria-current="page"
+              >Home</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="goToMenu('/databinding/html')">HTML</a>
+            <a
+              class="nav-link"
+              @click="goToMenu('/template/p1/single')"
+              :class="{ active: $route.path === '/template/p1/single' }"
+              >SingleViewEdit</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              @click="goToMenu('/template/p2/multiple')"
+              :class="{ active: $route.path === '/template/p2/multiple' }"
+              >MultipleEdit</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              @click="goToMenu('/template/p3/list')"
+              :class="{ active: $route.path === '/template/p3/list' }"
+              >ListToDetail</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              @click="goToMenu('/template/p4/master')"
+              :class="{ active: $route.path === '/template/p4/master' }"
+              >MasterDetail</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              @click="goToMenu('/template/p5/shuttle')"
+              :class="{ active: $route.path === '/template/p5/shuttle' }"
+              >Shuttle</a
+            >
           </li>
         </ul>
         <form class="d-flex" role="search">
