@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/milo/repos/thegreat-bootcamp/05_node/logs/.a1cb6fd65aea297eec6bf20317cd8beeddb9d1bb-audit.json",
+    "files": [
+        {
+            "date": 1672540452270,
+            "name": "/Users/milo/repos/thegreat-bootcamp/05_node/logs/2023-01-01.log",
+            "hash": "8581914db49baca69fcb450fa55b1182a9f1bc1e7c146fd9910eec7550d2b1c0"
+        }
+    ],
+    "hashType": "sha256"
+}
