@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const ics = require("ics");
 
 const config = {
   service: "gmail",
@@ -22,4 +23,23 @@ const send = async (data) => {
   });
 };
 
-module.exports = { send };
+const sendWithIcs = async (data, event) => {
+  ics.createEvent(event, async (err, value) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(value);
+    const message = {
+      ...data,
+      icalEvent: {
+        filename: "invitation.ics",
+        method: "REQUEST",
+        content: value,
+      },
+    };
+    await send(message);
+  });
+};
+
+module.exports = { send, sendWithIcs };

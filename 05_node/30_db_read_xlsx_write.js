@@ -4,7 +4,7 @@ const xlsx = require("xlsx");
 
 const getData = async () => {
   const salariesList = await mysql.query("salariesList");
-  console.log(salariesList);
+  // console.log(salariesList);
   return salariesList;
 };
 

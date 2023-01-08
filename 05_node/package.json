@@ -18,7 +18,8 @@
     "rotating-file-stream": "^3.0.4",
     "winston": "^3.8.2",
     "winston-daily-rotate-file": "^4.7.1",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "xlsx-js-style": "^1.2.0"
   },
   "name": "05_node",
   "version": "1.0.0",
